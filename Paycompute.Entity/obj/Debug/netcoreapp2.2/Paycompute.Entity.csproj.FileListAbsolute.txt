@@ -1,0 +1,8 @@
+F:\SandBox\PayCompute\Paycompute.Entity\bin\Debug\netcoreapp2.2\Paycompute.Entity.deps.json
+F:\SandBox\PayCompute\Paycompute.Entity\bin\Debug\netcoreapp2.2\Paycompute.Entity.dll
+F:\SandBox\PayCompute\Paycompute.Entity\bin\Debug\netcoreapp2.2\Paycompute.Entity.pdb
+F:\SandBox\PayCompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.csproj.CoreCompileInputs.cache
+F:\SandBox\PayCompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.AssemblyInfoInputs.cache
+F:\SandBox\PayCompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.AssemblyInfo.cs
+F:\SandBox\PayCompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.dll
+F:\SandBox\PayCompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.pdb

@@ -1,0 +1,14 @@
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.deps.json
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.dll
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.pdb
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Entity.dll
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Persistence.dll
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Entity.pdb
+F:\SandBox\PayCompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Persistence.pdb
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.csprojAssemblyReference.cache
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.csproj.CoreCompileInputs.cache
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.AssemblyInfoInputs.cache
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.AssemblyInfo.cs
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.csproj.CopyComplete
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.dll
+F:\SandBox\PayCompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.pdb

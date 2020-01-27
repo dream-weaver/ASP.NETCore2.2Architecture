@@ -1,0 +1,9 @@
+F:\SandBox\PayCompute\Paycompute.Persistence\bin\Debug\netcoreapp2.1\Paycompute.Persistence.deps.json
+F:\SandBox\PayCompute\Paycompute.Persistence\bin\Debug\netcoreapp2.1\Paycompute.Persistence.dll
+F:\SandBox\PayCompute\Paycompute.Persistence\bin\Debug\netcoreapp2.1\Paycompute.Persistence.pdb
+F:\SandBox\PayCompute\Paycompute.Persistence\obj\Debug\netcoreapp2.1\Paycompute.Persistence.csprojAssemblyReference.cache
+F:\SandBox\PayCompute\Paycompute.Persistence\obj\Debug\netcoreapp2.1\Paycompute.Persistence.csproj.CoreCompileInputs.cache
+F:\SandBox\PayCompute\Paycompute.Persistence\obj\Debug\netcoreapp2.1\Paycompute.Persistence.AssemblyInfoInputs.cache
+F:\SandBox\PayCompute\Paycompute.Persistence\obj\Debug\netcoreapp2.1\Paycompute.Persistence.AssemblyInfo.cs
+F:\SandBox\PayCompute\Paycompute.Persistence\obj\Debug\netcoreapp2.1\Paycompute.Persistence.dll
+F:\SandBox\PayCompute\Paycompute.Persistence\obj\Debug\netcoreapp2.1\Paycompute.Persistence.pdb
