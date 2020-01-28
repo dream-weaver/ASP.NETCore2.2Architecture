@@ -54,7 +54,6 @@ namespace Paycompute.Services.Implementation
             throw new NotImplementedException();
         }
 
-
         public decimal UnionFees(int id)
         {
             throw new NotImplementedException();

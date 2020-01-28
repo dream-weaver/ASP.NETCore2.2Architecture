@@ -8,13 +8,14 @@ namespace Paycompute.Services
 {
     public interface IEmployeeService
     {
-        Task CreateAsync(Employee newEmployee); 
+        Task CreateAsync(Employee newEmployee);
+        IEnumerable<Employee> GetAll();
         Employee GetById(int employeeId);
+        Task Delete(int employeeId);
         Task UpdateAsync(Employee employee);
         Task UpdateAsync(int id);
-        Task Delete(int employeeId);
         Decimal UnionFees(int id);
         Decimal StudentLoanRepaymentAmount(int id, decimal totalAmount);
-        IEnumerable<Employee> GetAll();
+
     }
 }
