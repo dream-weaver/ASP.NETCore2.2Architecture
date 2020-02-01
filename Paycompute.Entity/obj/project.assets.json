@@ -687,23 +687,26 @@
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.2",
     "restore": {
-      "projectUniqueName": "F:\\SandBox\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
+      "projectUniqueName": "F:\\SandBox\\PayCompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
       "projectName": "Paycompute.Entity",
-      "projectPath": "F:\\SandBox\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
+      "projectPath": "F:\\SandBox\\PayCompute\\Paycompute.Entity\\Paycompute.Entity.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\SandBox\\Paycompute\\Paycompute.Entity\\obj\\",
+      "outputPath": "F:\\SandBox\\PayCompute\\Paycompute.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
