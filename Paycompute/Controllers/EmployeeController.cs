@@ -125,10 +125,13 @@ namespace Paycompute.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]  // Prevents cross-site Request Forgery Attacks
         public async Task <IActionResult> Edit(EmployeeEditViewModel model)
+
+
         {
             if (ModelState.IsValid)
             {
                 var employee = _employeeService.GetById(model.Id);
+
                 if (employee == null)
                 {
                     return NotFound();
@@ -165,6 +168,61 @@ namespace Paycompute.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            var employee = _employeeService.GetById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            EmployeeDetailViewModel model = new EmployeeDetailViewModel
+            {
+                Id = employee.Id,
+                EmployeeNo = employee.EmployeeNo,
+                FullName = employee.FullName,
+                Gender = employee.Gender,
+                DOB = employee.DOB,
+                DateJoined = employee.DateJoined,
+                Designation = employee.Designation,
+                NationalInsuranceNo = employee.NationalInsuranceNo,
+                Phone = employee.Phone,
+                Email = employee.Email,
+                PaymentMethod = employee.PaymentMethod,
+                StudentLoan = employee.StudentLoan,
+                UnionMember = employee.UnionMember,
+                Address = employee.Address,
+                City = employee.City,
+                ImageUrl = employee.ImageUrl,
+                Postcode = employee.Postcode,
+
+            };
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var employee = _employeeService.GetById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            var model = new EmployeeDeleteViewModel()
+            {
+                id = employee.Id,
+                FullName = employee.FullName
+            };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]  // Prevents cross-site Request Forgery Attacks
+        public async Task <IActionResult> Delete(EmployeeDeleteViewModel deleteViewModel)
+        {
+            await _employeeService.Delete(deleteViewModel.id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
