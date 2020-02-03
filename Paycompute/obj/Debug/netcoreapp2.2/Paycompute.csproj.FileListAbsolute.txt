@@ -37,3 +37,4 @@ F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.csproj.CopyC
 F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.dll
 F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.pdb
 F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Index.g.cshtml.cs
+F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Create.g.cshtml.cs
