@@ -38,3 +38,6 @@ F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.dll
 F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.pdb
 F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Index.g.cshtml.cs
 F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Create.g.cshtml.cs
+F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Edit.g.cshtml.cs
+F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Detail.g.cshtml.cs
+F:\SandBox\PayCompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Delete.g.cshtml.cs
