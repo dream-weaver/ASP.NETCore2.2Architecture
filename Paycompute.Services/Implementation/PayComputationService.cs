@@ -38,7 +38,7 @@ namespace Paycompute.Services.Implementation
             }
 
             public IEnumerable<PaymentRecord> GetAll() => _context.PaymentRecords.OrderBy(p => p.EmployeeId);
-
+             
 
             public IEnumerable<SelectListItem> GetAllTaxYear()
             {
@@ -77,6 +77,8 @@ namespace Paycompute.Services.Implementation
 
             public decimal TotalEarnings(decimal overtimeEarnings, decimal contractualEarnings)
                   =>overtimeEarnings + contractualEarnings;
-            
+
+            public TaxYear GetTaxYearById(int id)
+            => _context.TaxYears.Where(year => year.Id == id).FirstOrDefault();
       }
 }

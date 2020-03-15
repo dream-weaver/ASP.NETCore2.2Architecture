@@ -1,0 +1,103 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Paycompute.Entity;
+using Paycompute.Models;
+using Paycompute.Services;
+
+namespace Paycompute.Controllers
+{
+      public class PayController : Controller
+      {
+            private readonly IPayComputationService _payComputationService;
+            private readonly IEmployeeService _employeeService;
+            private readonly ITaxService _taxService;
+            private readonly INationalInsuranceContributionService _nationalInsuranceContribution;
+            private decimal _overtimeHours;
+            private decimal _overtimeEarnings;
+            private decimal _contractualEarnings;
+            private decimal _totalEarnings;
+            private decimal _tax;
+            private decimal _nic;
+            private decimal _slc;
+            private decimal _unionFee;
+            private decimal _totalDeduction;
+
+            public PayController(IPayComputationService payComputationService, 
+                                             IEmployeeService employeeService,
+                                             ITaxService taxService,
+                                             INationalInsuranceContributionService nationalInsuranceContribution)
+            {
+                  _payComputationService = payComputationService;
+                  _employeeService = employeeService;
+                  _taxService = taxService;
+                  _nationalInsuranceContribution = nationalInsuranceContribution;
+            }
+            public IActionResult Index()
+            {
+                  var payRecords = _payComputationService.GetAll().Select(pay => new PaymentRecordIndexViewModel
+                  {
+                        Id = pay.Id,
+                        EmployeeId = pay.EmployeeId,
+                        FullName = pay.FullName,
+                        PayDate = pay.PayDate,
+                        PayMonth = pay.PayMonth,
+                        TaxYearId = pay.TaxYearId,
+                        Year = _payComputationService.GetTaxYearById(pay.TaxYearId).YearOfTax,
+                        TotalEarnings = pay.TotalEarnings,
+                        TotalDeduction = pay.TotalDeduction,
+                        NetPayment = pay.NetPayment,
+                        Employee = pay.Employee,
+                  }); 
+                  return View(payRecords);
+            }
+
+            public IActionResult Create()
+            {
+                  ViewBag.employees = _employeeService.GetAllEmployeesForPayroll();
+                  ViewBag.taxYears = _payComputationService.GetAllTaxYear();
+                  var model = new PaymentRecordCreateViewModel();
+                        
+                  return View(model);
+            }
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public async Task<IActionResult> Create(PaymentRecordCreateViewModel model)
+            {
+                  if (ModelState.IsValid)
+                  {
+                        var payrecord = new PaymentRecord()
+                        {
+                              Id = model.Id,
+                              EmployeeId = model.EmployeeId,
+                              FullName = _employeeService.GetById(model.EmployeeId).FullName,
+                              NiNo = _employeeService.GetById(model.EmployeeId).NationalInsuranceNo,
+                              PayDate = model.PayDate,
+                              PayMonth = model.PayMonth,
+                              TaxYearId = model.TaxYearId,
+                              TaxCode = model.TaxCode,
+                              HourlyRate = model.HourlyRate,
+                              HoursWorked = model.HoursWorked,
+                              ContractualHours = model.ContractualHours,
+                              OvertimeHours = _overtimeHours = _payComputationService.OvertimeHours(model.HoursWorked, model.ContractualHours),
+                              ContractualEarnings = _contractualEarnings = _payComputationService.ContractualEarnings(model.ContractualHours, model.HoursWorked, model.HourlyRate),
+                              OvertimeEarnings = _overtimeEarnings = _payComputationService.OvertimeEarnings(_payComputationService.OvertimeRate(model.HourlyRate), _overtimeHours),
+                              TotalEarnings = _totalEarnings = _payComputationService.TotalEarnings(_overtimeEarnings, _contractualEarnings),
+                              Tax = _tax=_taxService.TaxAmount(_totalEarnings),
+                              UnionFee = _unionFee = _employeeService.UnionFees(model.EmployeeId),
+                              SLC =_slc= _employeeService.StudentLoanRepaymentAmount(model.EmployeeId, _totalEarnings),
+                              NIC =_nic= _nationalInsuranceContribution.NIContribution(_totalEarnings),
+                              TotalDeduction = _totalDeduction =  _payComputationService.TotalDeduction(_tax, _nic, _slc, _unionFee),
+                              NetPayment = _payComputationService.NetPay(_totalEarnings, _totalDeduction),
+                        };
+                        await _payComputationService.CreateAsync(payrecord);
+                        return RedirectToAction(nameof(Index)); 
+                  }
+                  ViewBag.employees = _employeeService.GetAllEmployeesForPayroll();
+                  ViewBag.taxYears = _payComputationService.GetAllTaxYear();
+                  return View();
+            }
+      }
+}
