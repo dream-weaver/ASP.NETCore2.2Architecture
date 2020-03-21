@@ -1,21 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <UserSecretsId>aspnet-Paycompute-6C11D22F-DAD9-4485-A97D-7720945EA433</UserSecretsId>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <Version>1.0.1</Version>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Paycompute.Entity\Paycompute.Entity.csproj" />
-    <ProjectReference Include="..\Paycompute.Services\Paycompute.Services.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="wwwroot\images\employee\" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+          <PropertyGroup>
+                    <TargetFramework>netcoreapp2.2</TargetFramework>
+                    <UserSecretsId>aspnet-Paycompute-6C11D22F-DAD9-4485-A97D-7720945EA433</UserSecretsId>
+                    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+                    <Version>1.0.1</Version>
+          </PropertyGroup>
+          <ItemGroup>
+                    <PackageReference Include="Microsoft.AspNetCore.App" />
+                    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+                    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+                    <PackageReference Include="RotativaCore" Version="2.2.0" />
+          </ItemGroup>
+          <ItemGroup>
+                    <None Update="WKHTMLTOPDF\wkhtmltoimage.exe">
+                              <CopyToOutputDirectory>Preserve Newest</CopyToOutputDirectory>
+                    </None>
+                    <None Update="WKHTMLTOPDF\wkhtmltopdf.exe">
+                              <CopyToOutputDirectory>Preserve Newest</CopyToOutputDirectory>
+                    </None>
+          </ItemGroup>
+          <ItemGroup>
+                    <ProjectReference Include="..\Paycompute.Entity\Paycompute.Entity.csproj" />
+                    <ProjectReference Include="..\Paycompute.Services\Paycompute.Services.csproj" />
+          </ItemGroup>
+          <ItemGroup>
+                    <Folder Include="Data\" />
+                    <Folder Include="WKHTMLTOPDF\" />
+                    <Folder Include="wwwroot\images\employee\" />
+          </ItemGroup>
 </Project>

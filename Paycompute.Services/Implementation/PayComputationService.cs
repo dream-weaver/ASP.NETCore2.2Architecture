@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace Paycompute.Services.Implementation
             }
 
             public IEnumerable<PaymentRecord> GetAll() => _context.PaymentRecords.OrderBy(p => p.EmployeeId);
-             
+
 
             public IEnumerable<SelectListItem> GetAllTaxYear()
             {
@@ -51,7 +52,7 @@ namespace Paycompute.Services.Implementation
             }
             public PaymentRecord GetById(int id) => _context.PaymentRecords.Where(pay => pay.Id == id).FirstOrDefault();
 
-            public decimal NetPay(decimal totalEarnings, decimal totalDeduction) 
+            public decimal NetPay(decimal totalEarnings, decimal totalDeduction)
                   => totalEarnings - totalDeduction;
 
             public decimal OvertimeEarnings(decimal overtimeRate, decimal overtimeHours)
@@ -63,7 +64,8 @@ namespace Paycompute.Services.Implementation
                   {
                         overtimeHours = 0.00m;
                   }
-                  else if ( hoursWorked > contractualHours ) {
+                  else if (hoursWorked > contractualHours)
+                  {
                         overtimeHours = hoursWorked - contractualHours;
                   }
                   return overtimeHours;
@@ -76,7 +78,7 @@ namespace Paycompute.Services.Implementation
                   => tax + nic + studentLoanRepayment + unionFees;
 
             public decimal TotalEarnings(decimal overtimeEarnings, decimal contractualEarnings)
-                  =>overtimeEarnings + contractualEarnings;
+                  => overtimeEarnings + contractualEarnings;
 
             public TaxYear GetTaxYearById(int id)
             => _context.TaxYears.Where(year => year.Id == id).FirstOrDefault();

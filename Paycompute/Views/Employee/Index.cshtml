@@ -13,7 +13,7 @@
                 </nav><br /><br />
                 <div class="row">
                     <div class="col-md-12 table-responsive-md">
-                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create">Create New Employee</a>
+                        <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> New Employee</a>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -31,7 +31,9 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.EmployeeNo</td>
+                                        <td><a asp-action="Detail" asp-route-id="@item.Id">
+                                                  @item.EmployeeNo
+                                                  </a>
                                         <td>
                                             <img src="@Url.Content(item.ImageUrl) " alt="image" />
                                         </td>
