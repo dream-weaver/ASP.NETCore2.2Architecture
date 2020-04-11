@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting.Internal;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Paycompute.Entity;
 using Paycompute.Models;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Paycompute.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
@@ -21,7 +23,7 @@ namespace Paycompute.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? pageNumber)
         {
             var employees = _employeeService.GetAll().Select(employee => new EmployeeIndexViewModel
             {
@@ -34,8 +36,8 @@ namespace Paycompute.Controllers
                 Designation = employee.Designation,
                 City = employee.City
             }).ToList();
-
-            return View(employees);
+            int pageSize = 4;
+            return View(EmployeeListPagination<EmployeeIndexViewModel>.Create(employees, pageNumber ?? 1, pageSize));
         }
 
         [HttpGet]

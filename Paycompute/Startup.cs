@@ -41,17 +41,24 @@ namespace Paycompute
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<Services.IEmployeeService, EmployeeService>();
             services.AddScoped<Services.IPayComputationService, PayComputationService>();
             services.AddScoped<Services.INationalInsuranceContributionService, NationalInsuranceContributionService>();
             services.AddScoped<Services.ITaxService, TaxService>();
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, 
+                              IHostingEnvironment env, 
+                              UserManager<IdentityUser> userManager, 
+                              RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -70,6 +77,7 @@ namespace Paycompute
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+            DataSeedingInitializer.UserAndRoleSeedAsync(userManager, roleManager).Wait();
 
             app.UseMvc(routes =>
             {

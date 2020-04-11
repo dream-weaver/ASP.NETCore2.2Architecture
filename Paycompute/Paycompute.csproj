@@ -13,10 +13,10 @@
           </ItemGroup>
           <ItemGroup>
                     <None Update="WKHTMLTOPDF\wkhtmltoimage.exe">
-                              <CopyToOutputDirectory>Preserve Newest</CopyToOutputDirectory>
+                              <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
                     </None>
                     <None Update="WKHTMLTOPDF\wkhtmltopdf.exe">
-                              <CopyToOutputDirectory>Preserve Newest</CopyToOutputDirectory>
+                              <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
                     </None>
           </ItemGroup>
           <ItemGroup>

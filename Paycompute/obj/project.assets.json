@@ -13032,11 +13032,11 @@
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "F:\\SandBox\\PayCompute\\Paycompute\\Paycompute.csproj",
+      "projectUniqueName": "F:\\SandBox\\Paycompute\\Paycompute\\Paycompute.csproj",
       "projectName": "Paycompute",
-      "projectPath": "F:\\SandBox\\PayCompute\\Paycompute\\Paycompute.csproj",
+      "projectPath": "F:\\SandBox\\Paycompute\\Paycompute\\Paycompute.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "F:\\SandBox\\PayCompute\\Paycompute\\obj\\",
+      "outputPath": "F:\\SandBox\\Paycompute\\Paycompute\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -13056,11 +13056,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "F:\\SandBox\\PayCompute\\Paycompute.Entity\\Paycompute.Entity.csproj": {
-              "projectPath": "F:\\SandBox\\PayCompute\\Paycompute.Entity\\Paycompute.Entity.csproj"
+            "F:\\SandBox\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj": {
+              "projectPath": "F:\\SandBox\\Paycompute\\Paycompute.Entity\\Paycompute.Entity.csproj"
             },
-            "F:\\SandBox\\PayCompute\\Paycompute.Services\\Paycompute.Services.csproj": {
-              "projectPath": "F:\\SandBox\\PayCompute\\Paycompute.Services\\Paycompute.Services.csproj"
+            "F:\\SandBox\\Paycompute\\Paycompute.Services\\Paycompute.Services.csproj": {
+              "projectPath": "F:\\SandBox\\Paycompute\\Paycompute.Services\\Paycompute.Services.csproj"
             }
           }
         }
